@@ -5,16 +5,16 @@
 #
 # See https://github.com/hyperledger/fabric/blob/master/docs/dev-setup/install.md#building-outside-of-vagrant-
 #
-# NOTE: This script assumes that 
+# NOTE: This script assumes that
 #	- OS specific apt-sources / repositories are already set appropriately.
+#	- Host's GOPATH environment variable is set.
 #
-# To get started on a fresh Ubuntu install: 
-#	mkdir -p $HOME/git/src/github.com/hyperledger
-#	cd $HOME/git/src/github.com/hyperledger
-#	git clone https://github.com/hyperledger/fabric.git	
+# To get started on a fresh Ubuntu install:
+#	mkdir -p $GOPATH/src/github.com/hyperledger
+#	cd $GOPATH/src/github.com/hyperledger
+#	git clone http://gerrit.hyperledger.org/r/fabric
 #	sudo ./fabric/devenv/setupUbuntuOnPPC64el.sh
-#	export GOPATH=$HOME/git
-#	cd $HOME/git/src/github.com/hyperledger/fabric
+#	cd $GOPATH/src/github.com/hyperledger/fabric
 #	make dist-clean all
 
 if [ xroot != x$(whoami) ]

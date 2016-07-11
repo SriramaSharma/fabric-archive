@@ -135,13 +135,13 @@ cd rocksdb
 git checkout tags/v4.1
 if [ x$MACHINE = xs390x ]
 then
-    echo There were some bugs in 4.1 for x/p, dev stream has the fix, living dangereously, fixing in place
+    echo There were some bugs in 4.1 for z/p, dev stream has the fix, living dangereously, fixing in place
     sed -i -e "s/-march=native/-march=z196/" build_tools/build_detect_platform
     sed -i -e "s/-momit-leaf-frame-pointer/-DDUMBDUMMY/" Makefile
 elif [ x$MACHINE = xppc64le ]
 then
-    echo There were some bugs in 4.1 for x/p, dev stream has the fix, living dangereously, fixing in place.
-    echo Below changes are not required for newer releases of rocksdb. 
+    echo There were some bugs in 4.1 for z/p, dev stream has the fix, living dangereously, fixing in place.
+    echo Below changes are not required for newer releases of rocksdb.
     sed -ibak 's/ifneq ($(MACHINE),ppc64)/ifeq (,$(findstring ppc64,$(MACHINE)))/g' Makefile
 fi
 
